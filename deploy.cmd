@@ -135,7 +135,8 @@ IF EXIST "%DEPLOYMENT_TARGET%\manage.py" (
 popd
 
 :postPython
-D:\home\Python35\python.exe  -m pip install --find-links="%DEPLOYMENT_TARGET%\wheelhouse" -r "%DEPLOYMENT_TARGET%\requirements.txt" 
+echo You Are in custom pip install
+D:\home\Python35\python.exe  -m pip install --find-links="%DEPLOYMENT_TARGET%\wheelhouse\" -r "%DEPLOYMENT_TARGET%\requirements.txt" 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
