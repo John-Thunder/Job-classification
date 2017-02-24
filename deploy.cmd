@@ -95,7 +95,7 @@ IF NOT EXIST "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" (
   )
 
   echo Creating %PYTHON_RUNTIME% virtual environment.
-  %PYTHON_EXE% -m %PYTHON_ENV_MODULE% env
+  %PYTHON_EXE% -m %PYTHON_ENV_MODULE% "%DEPLOYMENT_TARGET%\env"
   IF !ERRORLEVEL! NEQ 0 goto error
 
   copy /y NUL "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" >NUL
