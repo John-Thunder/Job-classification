@@ -105,7 +105,7 @@ IF NOT EXIST "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" (
 
 :: 4. Install packages
 echo Pip install requirements.
-D:\home\Python35\python.exe -m pip install  -r requirements.txt  
+env\scripts\pip install --find-links="%DEPLOYMENT_TARGET%\wheelhouse"" -r "%DEPLOYMENT_TARGET%\requirements.txt" 
 IF !ERRORLEVEL! NEQ 0 goto error
 
 REM Add additional package installation here
