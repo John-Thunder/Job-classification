@@ -31,7 +31,6 @@ def hello():
 
 if __name__ == "__main__":
     import os
-    HOST = os.environ.get('SERVER_HOST', 'localhost')
     clf = classification.classification()
     clf.load()
     try:
@@ -39,4 +38,4 @@ if __name__ == "__main__":
     except ValueError:
         PORT = 5555
     app.secret_key = "JJJJJJJJJJ"
-    app.run(HOST, PORT)
+    app.run(host='localhost', port=PORT)
