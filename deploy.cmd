@@ -57,7 +57,7 @@ goto Deployment
 
 SET PYTHON_RUNTIME=python-3.5
 SET PYTHON_VER=3.5
-SET PYTHON_EXE=%SYSTEMDRIVE%\python35\python.exe
+SET PYTHON_EXE=D:\home\Python35\python.exe
 SET PYTHON_ENV_MODULE=virtualenv
 
 
