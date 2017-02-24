@@ -54,27 +54,12 @@ goto Deployment
 
 :SelectPythonVersion
 
-IF DEFINED KUDU_SELECT_PYTHON_VERSION_CMD (
-  call %KUDU_SELECT_PYTHON_VERSION_CMD% "%DEPLOYMENT_SOURCE%" "%DEPLOYMENT_TARGET%" "%DEPLOYMENT_TEMP%"
-  IF !ERRORLEVEL! NEQ 0 goto error
 
-  SET /P PYTHON_RUNTIME=<"%DEPLOYMENT_TEMP%\__PYTHON_RUNTIME.tmp"
-  IF !ERRORLEVEL! NEQ 0 goto error
+SET PYTHON_RUNTIME=python-3.5
+SET PYTHON_VER=3.5
+SET PYTHON_EXE=D:\home\Python35\python.exe
+SET PYTHON_ENV_MODULE=virtualenv
 
-  SET /P PYTHON_VER=<"%DEPLOYMENT_TEMP%\__PYTHON_VER.tmp"
-  IF !ERRORLEVEL! NEQ 0 goto error
-
-  SET /P PYTHON_EXE=<"%DEPLOYMENT_TEMP%\__PYTHON_EXE.tmp"
-  IF !ERRORLEVEL! NEQ 0 goto error
-
-  SET /P PYTHON_ENV_MODULE=<"%DEPLOYMENT_TEMP%\__PYTHON_ENV_MODULE.tmp"
-  IF !ERRORLEVEL! NEQ 0 goto error
-) ELSE (
-  SET PYTHON_RUNTIME=python-3.5
-  SET PYTHON_VER=3.5
-  SET PYTHON_EXE=%SYSTEMDRIVE%\python35\python.exe
-  SET PYTHON_ENV_MODULE=virtualenv
-)
 
 goto :EOF
 
@@ -120,7 +105,7 @@ IF NOT EXIST "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" (
 
 :: 4. Install packages
 echo Pip install requirements.
-D:\home\Python35\python.exe -m pip install --upgrade -r requirements.txt  
+D:\home\Python35\python.exe -m pip install  -r requirements.txt  
 IF !ERRORLEVEL! NEQ 0 goto error
 
 REM Add additional package installation here
