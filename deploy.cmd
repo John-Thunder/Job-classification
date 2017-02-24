@@ -54,12 +54,12 @@ goto Deployment
 
 :SelectPythonVersion
 
-IF DEFINED KUDU_SELECT_PYTHON_VERSION_CMD (
 
-  SET PYTHON_RUNTIME=python-3.5
-  SET PYTHON_VER=3.5
-  SET PYTHON_EXE=%SYSTEMDRIVE%\python35\python.exe
-  SET PYTHON_ENV_MODULE=virtualenv
+SET PYTHON_RUNTIME=python-3.5
+SET PYTHON_VER=3.5
+SET PYTHON_EXE=%SYSTEMDRIVE%\python35\python.exe
+SET PYTHON_ENV_MODULE=virtualenv
+
 
 goto :EOF
 
