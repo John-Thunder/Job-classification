@@ -135,6 +135,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\manage.py" (
 popd
 
 :postPython
+D:\home\Python35\python.exe  -m pip install --find-links="%DEPLOYMENT_TARGET%\wheelhouse" -r "%DEPLOYMENT_TARGET%\requirements.txt" 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
@@ -144,7 +145,6 @@ goto end
 setlocal
 set _CMD_=%*
 call %_CMD_%
-D:\home\Python35\python.exe  -m pip install --find-links="%DEPLOYMENT_TARGET%\wheelhouse" -r "%DEPLOYMENT_TARGET%\requirements.txt" 
 if "%ERRORLEVEL%" NEQ "0" echo Failed exitCode=%ERRORLEVEL%, command=%_CMD_%
 exit /b %ERRORLEVEL%
 
