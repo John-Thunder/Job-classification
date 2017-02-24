@@ -136,7 +136,7 @@ popd
 
 :postPython
 echo You Are in custom pip install
-D:\home\Python35\python.exe  -m pip install --find-links="%DEPLOYMENT_TARGET%\wheelhouse\" -r "%DEPLOYMENT_TARGET%\requirements.txt" 
+D:\home\Python35\python.exe  -m pip install  -r "%DEPLOYMENT_TARGET%\requirements.txt" 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
