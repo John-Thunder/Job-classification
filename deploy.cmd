@@ -135,8 +135,21 @@ IF EXIST "%DEPLOYMENT_TARGET%\manage.py" (
 popd
 
 :postPython
-echo You Are in custom pip install
-D:\home\Python35\python.exe  -m pip install  -r "%DEPLOYMENT_TARGET%\requirements.txt" 
+echo You Are in custom pip install "%DEPLOYMENT_TARGET%\requirements.txt" 
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\Flask-0.12-py2.py3-none-any.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\Jinja2-2.9.5-py2.py3-none-any.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\MarkupSafe-0.23-cp35-cp35m-win32.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\Werkzeug-0.11.15-py2.py3-none-any.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\appdirs-1.4.2-py2.py3-none-any.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\click-6.7-py2.py3-none-any.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\itsdangerous-0.24-cp35-none-any.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\numpy-1.12.0+mkl-cp35-cp35m-win32.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\packaging-16.8-py2.py3-none-any.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\pyparsing-2.1.10-py2.py3-none-any.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\scikit_learn-0.18.1-cp35-cp35m-win32.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\scipy-0.19.0rc1-cp35-cp35m-win32.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\six-1.10.0-py2.py3-none-any.whl
+D:\home\Python35\python.exe  -m pip install --upgrade -r D:\home\site\wwwroot\wheelhouse\sklearn-0.0-py2.py3-none-any.whl
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
